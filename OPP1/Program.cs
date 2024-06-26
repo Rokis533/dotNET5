@@ -55,19 +55,19 @@
             //computer1.BuildDate = new DateTime(2020, 10, 3);
 
 
-            //Computer computer2 = new Computer("AMD", "AMD", 8, true, "ASUS");
-            //Computer computer3 = new Computer("AMD", "AMD", 4, true, "ASUS1");
-            //Computer computer4 = new Computer("AMD", "AMD", 18, true);
-            //Computer computer5 = new Computer("AMD", "AMD", 16, true);
-            //Computer computer6 = new Computer("AMD", "AMD", 10, true, "ASUS3");
+            Computer computer2 = new Computer("AMD", "AMD", 8, true, "ASUS");
+            Computer computer3 = new Computer("AMD", "AMD", 4, true, "ASUS1");
+            Computer computer4 = new Computer("AMD", "AMD", 18, true);
+            Computer computer5 = new Computer("AMD", "AMD", 16, true);
+            Computer computer6 = new Computer("AMD", "AMD", 10, true, "ASUS3");
 
-            //List<Computer> computers = new List<Computer>();
-            //computers.Add(computer1);
-            //computers.Add(computer2);
-            //computers.Add(computer3);
-            //computers.Add(computer4);
-            //computers.Add(computer5);
-            //computers.Add(computer6);
+            List<Computer> computers = new List<Computer>();
+            computers.Add(computer1);
+            computers.Add(computer2);
+            computers.Add(computer3);
+            computers.Add(computer4);
+            computers.Add(computer5);
+            computers.Add(computer6);
 
 
 
@@ -91,6 +91,19 @@
 
         }
 
+
+        public static List<Computer> FilterByName(string name, List<Computer> list)
+        {
+            List<Computer> result = new List<Computer>();
+            foreach (Computer item in list)
+            {
+                if (item.Name.Contains(name))
+                {
+                    result.Add(item);
+                }
+            }
+            return result;
+        }
 
         public static int Calculate(int a = 2, int b = 2)
         {
