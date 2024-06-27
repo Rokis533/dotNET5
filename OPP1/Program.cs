@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Car car = new Car();
+            Car car = new Car("Test");
             car.Name = "Test";
             car.Model = "Test";
             car.Engine = new Engine();
@@ -46,13 +46,13 @@
 
 
 
-            //Computer computer1 = new Computer();
+            Computer computer1 = new Computer();
 
-            //computer1.Name = "Samsung";
-            //computer1.RAM = 16;
-            //computer1.CPU = "Intel";
-            //computer1.GraphicCard = "NVIDIA Geforce 3070";
-            //computer1.BuildDate = new DateTime(2020, 10, 3);
+            computer1.Name = "Samsung";
+            computer1.RAM = 16;
+            computer1.CPU = "Intel";
+            computer1.GraphicCard = "NVIDIA Geforce 3070";
+            computer1.BuildDate = new DateTime(2020, 10, 3);
 
 
             Computer computer2 = new Computer("AMD", "AMD", 8, true, "ASUS");
