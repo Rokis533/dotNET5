@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OPP1", "OPP1\OPP1.csproj", "{53868072-65DA-46DA-A8F8-4C2E8C8168FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodsInClasses", "MethodsInClasses\MethodsInClasses.csproj", "{63C0264E-FC1B-4D93-8D8C-0D950D604788}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MethodsInClasses", "MethodsInClasses\MethodsInClasses.csproj", "{63C0264E-FC1B-4D93-8D8C-0D950D604788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstract_Topic", "Abstract_Topic\Abstract_Topic.csproj", "{773C2577-B749-4EA2-B649-A1EAE5C72C72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{63C0264E-FC1B-4D93-8D8C-0D950D604788}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63C0264E-FC1B-4D93-8D8C-0D950D604788}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63C0264E-FC1B-4D93-8D8C-0D950D604788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{773C2577-B749-4EA2-B649-A1EAE5C72C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{773C2577-B749-4EA2-B649-A1EAE5C72C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{773C2577-B749-4EA2-B649-A1EAE5C72C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{773C2577-B749-4EA2-B649-A1EAE5C72C72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
