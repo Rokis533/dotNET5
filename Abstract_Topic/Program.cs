@@ -6,6 +6,8 @@ namespace Abstract_Topic
     {
         static void Main(string[] args)
         {
+
+
             TxtDocument txtdocument = new TxtDocument("tekstas.txt", "TestFile");
 
             txtdocument.Write("Tekstas kažkas");

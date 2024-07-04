@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace OPP1
+namespace MethodsInClasses
 {
     internal class Computer
     {

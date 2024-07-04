@@ -1,11 +1,10 @@
-﻿using OPP1;
-
-namespace MethodsInClasses
+﻿namespace MethodsInClasses
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+
             Computer computer = new Computer
             {
                 Apps = new List<App>

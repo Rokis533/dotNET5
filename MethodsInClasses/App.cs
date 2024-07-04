@@ -1,4 +1,4 @@
-﻿namespace OPP1
+﻿namespace MethodsInClasses
 {
     public class App
     {
