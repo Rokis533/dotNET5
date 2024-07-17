@@ -9,5 +9,10 @@ namespace Generics_Topic
     internal class Tomato : Vegetable
     {
         public int Juiceness { get; set; }
+
+        public override string ToString()
+        {
+            return $"Id: {Id}, Color: {Color}, Juiciness: {Juiceness}";
+        }
     }
 }
