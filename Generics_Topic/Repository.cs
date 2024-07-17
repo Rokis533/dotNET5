@@ -13,9 +13,7 @@ namespace Generics_Topic
 
         public void Add(T data)
         {
-
             data.Id = list.Count + 1;
-
             list.Add(data);
         }
         public List<T> Get()
@@ -36,7 +34,6 @@ namespace Generics_Topic
         }
         public T GetById(int id)
         {
-
             return list.Find(x => x.Id == id);
         }
     }
