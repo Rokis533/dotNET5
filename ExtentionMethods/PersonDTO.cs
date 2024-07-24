@@ -24,5 +24,18 @@ namespace ExtentionMethods
         {
             return $"Name: {Name}, Age: {Age}";
         }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (obj is PersonDTO personDTO)
+            {
+                return Name == personDTO.Name;
+            }
+
+            return false;
+        }
     }
 }

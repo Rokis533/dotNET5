@@ -4,22 +4,22 @@
     {
         static void Main(string[] args)
         {
-            string tekstas = Console.ReadLine();
+            //string tekstas = Console.ReadLine();
 
-            Console.WriteLine("Ar tuščias?");
-            Console.WriteLine(tekstas.IsEmpty());
+            //Console.WriteLine("Ar tuščias?");
+            //Console.WriteLine(tekstas.IsEmpty());
 
-            int number = 101;
-            Console.WriteLine($"Ar Lyginis {number}?");
-            Console.WriteLine(number.IsEven());
+            //int number = 101;
+            //Console.WriteLine($"Ar Lyginis {number}?");
+            //Console.WriteLine(number.IsEven());
 
-            Person person = new Person()
-            {
-                Id = 111,
-                Name = "Rokas",
-                Age = 1,
-                PersonalCode = 398465645
-            };
+            //Person person = new Person()
+            //{
+            //    Id = 111,
+            //    Name = "Rokas",
+            //    Age = 1,
+            //    PersonalCode = 398465645
+            //};
 
             //PersonDTO personDTO = new PersonDTO
             //{
@@ -27,7 +27,7 @@
             //    Age = person.Age,
             //};
 
-            PersonDTO personDTO = person.PersonToDto();
+            //PersonDTO personDTO = person.PersonToDto();
 
             List<int> numbers = new List<int> { 1, 2, 5, 6, 8, 6, 5, 3, 8 };
             List<string> words = new List<string> { "Test", "Rokas", "Ka=kas" };
@@ -46,6 +46,11 @@
             list.PrintAllItems();
 
 
+            var item = list.FindAndReturnIfEqual2(new PersonDTO { Age = 154, Name = "Rokas" });
+
+            var file = new FileInfo("file.txt");
+
+            file.ReadOtherLine();
         }
 
     }
