@@ -45,24 +45,54 @@ namespace InterfaceTopic
                 new Square(5, 5),
                 new Triangle(5, 9),
                 new Triangle(5, 10),
+                null,
+                new Square(5, 5),
+                new Square(5, 9),
+                new Square(2, 10),
+                null,
+                null,
+                new Square(99, 11),
+                new Square(2, 5),
                 new Triangle(5, 11),
                 new Square(2, 5),
             };
 
-
-
-            shapes.ForEach(shape =>
+            List<Square> squares = new List<Square>
             {
-                Console.WriteLine("----------------------------");
-                Console.WriteLine(shape.GetArea());
-                Console.WriteLine(shape.GetPerimeter());
-            });
+                new Square(5, 5),
+                new Square(5, 9),
+                new Square(2, 10),
+                null,
+                null,
+                new Square(99, 11),
+                new Square(2, 5),
+            };
+
+            ShapeComparer squareComparer = new ShapeComparer();
+
+            shapes.Sort(squareComparer);
+
+
+
+            //shapes.ForEach(shape =>
+            //{
+            //    Console.WriteLine("----------------------------");
+            //    Console.WriteLine(shape.GetArea());
+            //    Console.WriteLine(shape.GetPerimeter());
+            //});
 
             foreach (IShape shape in shapes)
             {
                 Console.WriteLine("----------------------------");
-                Console.WriteLine(shape.GetArea());
-                Console.WriteLine(shape.GetPerimeter());
+                if (shape is not null)
+                {
+                    Console.WriteLine(shape.GetArea());
+                    Console.WriteLine(shape.GetPerimeter());
+                }
+                else
+                {
+                    Console.WriteLine("Null");
+                }
             }
         }
     }
