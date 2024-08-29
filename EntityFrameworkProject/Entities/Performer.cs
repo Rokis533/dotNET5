@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace EntityFrameworkProject.Entities
 {
-    internal class Performer
+    internal class Performer : EntityBase
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Types { get; set; }
+
+        public List<Event> Events { get; set; }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using EntityFrameworkProject.Entities;
+﻿using EntityFrameworkProject.Configuration;
+using EntityFrameworkProject.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,12 @@ namespace EntityFrameworkProject
                 optionsBuilder.UseSqlServer("Server=(LocalDb)\\MSSQLLocalDB;Database=EventDb2;Trusted_Connection=True;");
 
             }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new EventConfiguration());
+            modelBuilder.ApplyConfiguration(new PerformerConfiguration());
         }
 
     }

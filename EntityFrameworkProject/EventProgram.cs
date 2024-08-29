@@ -31,8 +31,19 @@ namespace EntityFrameworkProject
 
             var ev = _eventRepository.GetById(new Guid("72BD59D8-6999-4AE4-508A-08DCC7831C39"));
 
+
+
             if (ev != null)
             {
+                var performer = new Performer
+                {
+                    Name = "Radzi",
+                    Types = "Pramoginis"
+
+                };
+
+                ev.Performer = performer;
+
                 ev.Age = 0;
                 ev.Date = DateTime.Now;
                 _eventRepository.Update(ev);

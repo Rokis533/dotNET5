@@ -1,4 +1,5 @@
 ﻿using EntityFrameworkProject.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace EntityFrameworkProject.Repositories
         //R - Read
         public Event GetById(Guid id)
         {
-            return _context.Events.Find(id);
+            return _context.Events.Include(x=>x.Performer).FirstOrDefault(x=>x.Id == id);
         }
         //R - Read
         public IEnumerable<Event> GetAll()
