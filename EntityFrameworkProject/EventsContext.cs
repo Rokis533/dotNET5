@@ -31,6 +31,7 @@ namespace EntityFrameworkProject
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.ApplyConfiguration(new EventConfiguration());
             modelBuilder.ApplyConfiguration(new PerformerConfiguration());
         }
