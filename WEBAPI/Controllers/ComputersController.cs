@@ -9,8 +9,9 @@ namespace WEBAPI.Controllers
 	[ApiController]
 	public class ComputersController : ControllerBase
 	{
-		private static List<Computer> _computer = [];
-
+		private static List<Computer> _computer = new List<Computer>{
+			new Computer() { Id = 1} ,
+		};
 
 
 		// GET: api/<ComputersController>
@@ -33,12 +34,17 @@ namespace WEBAPI.Controllers
 		{
 			Computer computer = new Computer()
 			{
-				Id = newComputer.Id,
+				Id = _computer.Last().Id + 1,
 				Name = newComputer.Name,
 				Description = newComputer.Description,
 				Year = newComputer.Year,
 				CreatedAt = DateTime.Now,
 			};
+
+
+			int skaicius2 = 0;
+
+			int skaicius = 5 / skaicius2;
 
 			_computer.Add(computer);
 		}

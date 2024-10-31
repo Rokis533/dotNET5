@@ -1,4 +1,6 @@
 
+using WEBAPI.Controllers;
+
 namespace WEBAPI
 {
 	public class Program
@@ -7,12 +9,46 @@ namespace WEBAPI
 		{
 			var builder = WebApplication.CreateBuilder(args);
 
+
+
+			//IScopedService scopedService = new ScopedService();
+			//ISingletonService singletonService = new SingletonService();
+
+			//TestController testController = new TestController(scopedService, singletonService);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			// Add services to the container.
 
 			builder.Services.AddControllers();
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
+
+			builder.Services.AddScoped<IScopedService, ScopedService>(); //susikuria ties kiekvienu request
+			builder.Services.AddSingleton<ISingletonService, SingletonService>();//susikuria viena kartà kai programa pasileidþia
+
+			builder.Services.AddScoped<IApplesService, ApplesService>();
+
+
+			builder.Services.AddScoped<IAppleRepository, AppleRepository>();
+
+			builder.Services.AddSingleton<IAppleStorage, AppleStorage>();
+
 
 			var app = builder.Build();
 
