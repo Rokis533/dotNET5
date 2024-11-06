@@ -1,13 +1,13 @@
 ﻿namespace WEBAPI
 {
-    public interface IScopedService
+    public interface ITransientService
     {
         int Increment();
     }
 
-    public class ScopedService : IScopedService
+    public class TransientService : ITransientService
     {
-        public ScopedService()
+        public TransientService()
         {
 
         }

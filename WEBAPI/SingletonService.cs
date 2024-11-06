@@ -13,7 +13,7 @@
 
 		}
 
-		private int counter;
+		private int counter = 1;
 
 		public int Increment()
 		{
