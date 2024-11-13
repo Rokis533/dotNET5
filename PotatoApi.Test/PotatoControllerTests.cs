@@ -29,7 +29,7 @@ namespace PotatoApi.Test
 
         }
         [Theory, PotatoData]
-        public async Task GetPotato_GetPotatoById_Success(Potato potato, List<Potato> potatos)
+        public async Task GetPotato_GetPotatoById_Success(Potato potato)
         {
 
             //Arrange
