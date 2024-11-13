@@ -1,3 +1,4 @@
+using AutoFixture.Xunit2;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -27,17 +28,11 @@ namespace PotatoApi.Test
             Assert.IsType<NotFoundResult>(result.Result);
 
         }
-        [Fact]
-        public async Task GetPotato_GetPotatoById_Success()
+        [Theory, PotatoData]
+        public async Task GetPotato_GetPotatoById_Success(Potato potato, List<Potato> potatos)
         {
 
             //Arrange
-            Potato potato = new Potato
-            {
-                Id = 1,
-                Name = "Test",
-                Weight = 1,
-            };
 
             var potatoRepositoryMock = new Mock<IPotatoRepository>();
             var loggerMock = new Mock<ILogger<PotatoesController>>();
