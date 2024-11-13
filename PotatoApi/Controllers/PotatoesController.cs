@@ -45,9 +45,11 @@ namespace PotatoApi.Controllers
         {
             try
             {
-                _logger.LogInformation($"Getting potato by Id:{id} at {DateTime.UtcNow} IP:{HttpContext.Connection.RemoteIpAddress}");
+                //_logger.LogInformation($"Getting potato by Id:{id} at {DateTime.UtcNow} IP:{HttpContext.Connection.RemoteIpAddress}");
 
                 var potato = _potatoRepository.GetById(id);
+
+
                 if (potato == null)
                 {
                     _logger.LogInformation($"NOT FOUND \t\t\nGetting potato by Id:{id} at {DateTime.UtcNow}");
