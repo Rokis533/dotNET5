@@ -36,9 +36,6 @@ namespace PotatoApi.Controllers
             return _potatoRepository.GetAll();
         }
 
-
-
-
         // GET: api/Potatoes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Potato>> GetPotato(int id)
@@ -47,8 +44,11 @@ namespace PotatoApi.Controllers
             {
                 //_logger.LogInformation($"Getting potato by Id:{id} at {DateTime.UtcNow} IP:{HttpContext.Connection.RemoteIpAddress}");
 
-                var potato = _potatoRepository.GetById(id);
-
+                var potato = _potatoRepository.GetById(id); // gražinsi null
+                if(potato.Weight > 0)
+                {
+                    return BadRequest();
+                }
 
                 if (potato == null)
                 {

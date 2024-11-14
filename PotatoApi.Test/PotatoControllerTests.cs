@@ -5,6 +5,7 @@ using Moq;
 using PotatoApi.Controllers;
 using PotatoApi.Entities;
 using PotatoApi.Repositories;
+using PotatoApi.Test.Utils;
 
 namespace PotatoApi.Test
 {
@@ -28,7 +29,7 @@ namespace PotatoApi.Test
             Assert.IsType<NotFoundResult>(result.Result);
 
         }
-        [Theory, PotatoData]
+        [Theory, PotatoInvalidData]
         public async Task GetPotato_GetPotatoById_Success(Potato potato)
         {
 

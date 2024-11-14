@@ -24,6 +24,7 @@ namespace PotatoApi
             );
 
             builder.Services.AddScoped<IPotatoRepository, PotatoRepository>();
+            builder.Services.AddScoped<ICalculationService, CalculationService>();
 
             var app = builder.Build();
 
