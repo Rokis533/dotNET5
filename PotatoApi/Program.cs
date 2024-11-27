@@ -22,6 +22,7 @@ namespace PotatoApi
                 builder.Configuration.GetConnectionString("Database")
                )
             );
+            builder.Services.AddHttpClient();
 
             builder.Services.AddScoped<IPotatoRepository, PotatoRepository>();
             builder.Services.AddScoped<ICalculationService, CalculationService>();
