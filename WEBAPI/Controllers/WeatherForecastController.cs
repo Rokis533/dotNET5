@@ -2,46 +2,38 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WEBAPI.Controllers
 {
-	[ApiController]
-	[Route("[controller]")]
-	public class WeatherForecastController : ControllerBase
-	{
-		private static readonly string[] Summaries = new[]
-		{
-			"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-		};
+    [ApiController]
+    [Route("[controller]")]
+    public class WeatherForecastController : ControllerBase
+    {
+        private readonly HttpClient _httpClient;
 
-		private readonly ILogger<WeatherForecastController> _logger;
 
-		public WeatherForecastController(ILogger<WeatherForecastController> logger)
-		{
-			_logger = logger;
-		}
+        public WeatherForecastController(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
 
-		[HttpGet]
-		public IEnumerable<WeatherForecast> Get()
-		{
-			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-			{
-				Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-				TemperatureC = Random.Shared.Next(-20, 55),
-				Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-			})
-			.ToArray();
-		}
-		[HttpGet("GetWeatherForecastsByDate")]
-		public IEnumerable<WeatherForecast> GetByDate(DateOnly dateTime)
-		{
-			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-			{
-				Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-				TemperatureC = Random.Shared.Next(-20, 55),
-				Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-			})
-			.Where(x => x.Date.Equals(dateTime))
-			.ToArray();
-		}
+        [HttpGet("Async")]
+        public async Task<IActionResult> GetAsync()
+        {
+            var result1 = _httpClient.GetAsync("https://localhost:7053/api/Potatoes");
+            var result2 = _httpClient.GetAsync("https://localhost:7053/api/Potatoes");
+            var result3 = _httpClient.GetAsync("https://localhost:7053/api/Potatoes");
 
-		// localhost:5555/WeatherForecast/
-	}
+            await Task.WhenAll(result1, result2, result3);
+
+            return Ok();
+        }
+
+        [HttpGet("Sync")]
+        public IActionResult GetSync()
+        {
+            var result = _httpClient.GetAsync("https://localhost:7053/api/Potatoes").Result;
+            return Ok(result.Content);
+        }
+
+
+        // localhost:5555/WeatherForecast/
+    }
 }

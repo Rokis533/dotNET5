@@ -50,6 +50,8 @@ namespace WEBAPI
 
             builder.Services.AddSingleton<IAppleStorage, AppleStorage>();
 
+            builder.Services.AddHttpClient();
+
 
             var app = builder.Build();
 

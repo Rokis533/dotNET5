@@ -32,6 +32,8 @@ namespace PotatoApi.Controllers
             _logger.LogWarning("Getting potatoes");
             _logger.LogError("Getting potatoes");
 
+            throw new IamNotHappyException();
+            Thread.Sleep(2000);
 
             return _potatoRepository.GetAll();
         }
@@ -45,7 +47,7 @@ namespace PotatoApi.Controllers
                 //_logger.LogInformation($"Getting potato by Id:{id} at {DateTime.UtcNow} IP:{HttpContext.Connection.RemoteIpAddress}");
 
                 var potato = _potatoRepository.GetById(id); // gražinsi null
-                if(potato.Weight > 0)
+                if (potato.Weight > 0)
                 {
                     return BadRequest();
                 }

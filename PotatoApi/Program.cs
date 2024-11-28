@@ -27,6 +27,14 @@ namespace PotatoApi
             builder.Services.AddScoped<IPotatoRepository, PotatoRepository>();
             builder.Services.AddScoped<ICalculationService, CalculationService>();
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowLocalhost",
+                    policy => policy.WithOrigins("*")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod());
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -39,7 +47,9 @@ namespace PotatoApi
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+            app.UseCors("AllowLocalhost");
 
+            app.UseMiddleware<GlobalExceptionHandlingMidleware>();
 
             app.MapControllers();
 
